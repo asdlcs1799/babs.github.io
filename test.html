@@ -1,0 +1,269 @@
+<html>
+    <head>
+        <title>BABS</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,700&family=Shrikhand&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/effd3867de.js" crossorigin="anonymous"></script>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                /*font-family: 'Open Sans', sans-serif;*/
+                font-family: 'Alegreya Sans', sans-serif;
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            nav {
+                top: 0;
+                position: sticky;
+                width: 100%;
+                /*background-color: #FFFDFE;*/
+                background-color:#E7222E;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+                display: flex;
+                justify-content: left;
+                align-items: center;
+            }
+
+            nav img {
+                width: 40px;
+                margin-left: 30px;
+                margin-bottom: 5px;
+            }
+
+            .contact {
+                display: flex;
+                justify-content: right;
+            }
+
+            .contact span {
+                font-size: 20px;
+                font-weight: bold;
+                text-decoration: none;
+                color: black;
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 500px) {
+                .contact span {
+                    margin-right: 40px;
+                    font-size: 14px;
+                }
+            }
+
+            main {
+                width: 100%;
+                height: 100%;
+                background-color: #81C4FF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .monkeyPic {
+                width: 200px;
+                margin-left: 608px;
+                margin-bottom: 55px;
+                position: absolute;
+            }
+
+            .outerbox {
+                background-color: #16588E;
+                color: black;
+                border: 2px solid black;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+            }
+
+            .innerbox {
+                display: flex;
+                background-color: #FFFDFE;
+                margin: 20px;
+                margin-bottom: 5px;
+                border: 2px solid black;
+                border-radius: 15px;
+                height: 300px;
+                width: 450px;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+            }
+
+            .generateButton, .dateButton, .whereButton{
+                font-size: 20px;
+                font-weight: bold;
+                padding: 8px 30px;
+                background-color:#E7222E;
+                border: 2px solid black;
+                border-radius: 15px;
+                cursor: pointer;
+                margin: 5px 10px;
+            }
+
+            .generateButton:hover, .dateButton:hover, .whereButton:hover, .noButton:hover{
+                background-color: #f04650;
+            }
+
+            .yesButton, .noButton {
+                font-size: 20px;
+                font-weight: bold;
+                padding: 8px 30px;
+                border: 2px solid black;
+                border-radius: 15px;
+                cursor: pointer;
+                margin: 5px 10px;
+                z-index: 999999;
+            }
+
+            .yesButton {
+                background-color: #81C4FF;
+            }
+
+            .noButton {
+                background-color:#E7222E;
+            }
+
+            .text {
+                font-size: 30px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .pic {
+                width: 225px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .siennapic {
+                width: 225px;
+               
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <div class="contact">
+                <span>HBD</span>
+            </div>
+        </nav>
+
+        <main>   
+            <div class="outerbox" id="outerbox">
+                <div class="innerbox" id="innerbox">
+                    <div class="text" id="innerText">Hellu Babs :)</div>
+                </div>
+
+                <button class="generateButton" onclick="function1()" id="genButton">Click Me!</button>
+            </div>
+            <img class="monkeyPic" src="monkeynbg.png"/>
+        </main>
+    </body>
+
+    <script>
+        function function1() {
+            document.getElementById("innerText").innerHTML = "Advance Happy Birthday!";
+            document.getElementById('genButton').remove();
+
+            const para = document.createElement("button");
+            para.className = "dateButton";
+            para.id = "dateButton";
+            para.innerHTML = "Click Again!";
+            const element = document.getElementById("outerbox");
+            element.appendChild(para);
+            para.setAttribute("onclick","function2();");
+        }
+
+        function function2() {
+            document.getElementById("innerText").innerHTML = "This is me asking you out for a lunch date on your birthday...";
+            document.getElementById('dateButton').remove();
+
+            const whereButton = document.createElement("button");
+            whereButton.className = "whereButton";
+            whereButton.id = "whereButton";
+            whereButton.innerHTML = "Where???";
+            const element = document.getElementById("outerbox");
+            element.appendChild(whereButton);
+            whereButton.setAttribute("onclick","function3();");
+        }
+
+        function function3() {
+            document.getElementById("innerText").innerHTML = "Toooo where everything started a year ago....";
+            document.getElementById('whereButton').remove();
+
+            const pic = document.createElement("img");
+            pic.src = "us.jpg";
+            pic.className = "pic";
+            pic.id = "pic";
+            const element1 = document.getElementById("innerbox");
+            element1.appendChild(pic);
+
+            const yesButton = document.createElement("button");
+            yesButton.className = "yesButton";
+            yesButton.id = "yesButton";
+            yesButton.innerHTML = "YES";
+            const element2 = document.getElementById("outerbox");
+            element2.appendChild(yesButton);
+            yesButton.setAttribute("onclick","function5();");
+
+            const noButton = document.createElement("button");
+            noButton.className = "noButton";
+            noButton.id = "noButton";
+            noButton.innerHTML = "NO";
+            const element3 = document.getElementById("outerbox");
+            element3.appendChild(noButton);
+
+            noButton.setAttribute("onclick","function4();");
+        }
+
+        function function4() {
+            let randomMessage = [
+                "Bleh :p",
+                "Nice Try! :p",
+                "Kaya mo yan :p",
+                "Go lang Babs!!",
+                "Hehe",
+                "You're still trying?",
+                "Sige na please :D",
+                "Pretty please?"
+            ]
+            document.getElementById("innerText").innerHTML = randomMessage[Math.floor( Math.random()*randomMessage.length )];
+            document.getElementById("noButton").style.top = Math.random() * (window.innerHeight - 200) + 100 + "px";
+            document.getElementById("noButton").style.left = Math.random() * (window.innerWidth - 200) + 100 + "px";
+            document.getElementById("noButton").style.position = "absolute";
+        }
+
+        function function5() {
+            document.getElementById("innerText").innerHTML = "YAY, IT'S A DATE THEN!!!!! Pick you up by 11AM bubby <3 ILY";
+
+            const pic = document.createElement("img");
+            pic.src = "sienna.png";
+            pic.className = "siennapic";
+            pic.id = "siennapic";
+            const element = document.getElementById("innerbox");
+            element.appendChild(pic);
+
+            document.getElementById('noButton').remove();
+            document.getElementById('pic').remove();
+            document.getElementById('yesButton').remove();    
+
+            document.getElementById("innerbox").style.marginBottom = "20px";
+        }
+    </script>
+</html>
